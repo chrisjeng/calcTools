@@ -54,7 +54,8 @@ public class Cesar {
             } else if ("-f".equalsIgnoreCase(s) || "-file".equalsIgnoreCase(s)) {
                 FILE_MODE = true;
                 if (count == len - 3) {
-                    INPUT = args[];
+                    INPUT = args[++count];
+                    OUTPUT = args[++count];
                 }
             } else if ("--help".equalsIgnoreCase(s)) {
                 printHelpAndQuit();

@@ -9,8 +9,8 @@ import java.io.BufferedWriter;
 public class Cesar {
 
     private static final boolean TESTING = false;
-    private static final String INPUT = "in.txt";
-    private static final String OUTPUT = "out.txt";
+    private static String INPUT = "in.txt";
+    private static String OUTPUT = "out.txt";
 
     public static void main(String[] args) {
         if (TESTING) {
@@ -43,7 +43,8 @@ public class Cesar {
         }
 
         String oddity = null;
-        for (String s : args) {
+        for (count = 0; count < len; count++) {
+            String s = args[count];
             if ("-v".equalsIgnoreCase(s) || "-verbose".equals(s)) {
                 VERBOSE = true;
                 if (len == 1) {
@@ -52,6 +53,9 @@ public class Cesar {
                 }
             } else if ("-f".equalsIgnoreCase(s) || "-file".equalsIgnoreCase(s)) {
                 FILE_MODE = true;
+                if (count == len - 3) {
+                    INPUT = args[];
+                }
             } else if ("--help".equalsIgnoreCase(s)) {
                 printHelpAndQuit();
             } else {

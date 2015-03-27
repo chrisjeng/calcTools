@@ -10,5 +10,5 @@ Made to encode and decode Caesar shifts. Run `java Cesar --help` for assistance.
 ## `Par.java`
 Can calculate parallel resistor values.
 
-#### TODO:
+## TODO:
 * Suggest resistor combinations to reach a target resistance value based on what's available in your lab.

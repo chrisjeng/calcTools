@@ -37,13 +37,13 @@ public class Cesar {
         if (len == 0) {
             printHelpAndQuit();
         }
-        if (len == 1 && args[0].length() > 2 && !"-verbose".equalsIgnoreCase(s)) {
+        if (len == 1 && args[0].length() > 2 && !"-verbose".equalsIgnoreCase(args[0])) {
             VERBOSE = true;
             return args[0];
         }
 
         String oddity = null;
-        for (count = 0; count < len; count++) {
+        for (int count = 0; count < len; count++) {
             String s = args[count];
             if ("-v".equalsIgnoreCase(s) || "-verbose".equals(s)) {
                 VERBOSE = true;
@@ -72,10 +72,10 @@ public class Cesar {
     }
 
     private static void printHelpAndQuit() {
-        String helpMsg = "java Cesar ";
-        helpMsg += "[-v/-verbose] [-f/-file] [msg in quotes]";
+        String helpMsg = "USAGE: java Cesar ";
+        helpMsg += "[-v/-verbose] [-f/-file] [msg in quotes (if verbose)]";
         System.out.println(helpMsg);
-        System.exit(0);
+        System.exit(1);
     }
 
     private static void verbosePrint(String msg) {
